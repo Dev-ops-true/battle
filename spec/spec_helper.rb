@@ -103,5 +103,5 @@ require 'capybara/rspec'
 require 'rspec'
 require './app.rb'
 Capybara.app = Battle
-require './spec/features/web_helpers.rb'
+require './spec/features/web_helpers'
 end
