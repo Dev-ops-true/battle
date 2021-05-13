@@ -19,3 +19,11 @@ feature 'attacking player 2'  do
     expect(page).to have_content('You have attacked player 2')
   end
 end
+
+feature 'attacking player 2'  do
+  scenario 'player 1 attacks player 2' do
+   sign_in_and_play
+   click_button('Attack')
+    expect(page).to have_content('James:90HP')
+  end
+end
