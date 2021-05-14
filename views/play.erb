@@ -1,9 +1,13 @@
 
-<h1><%= "#{@player1} vs #{@player2}" %></h1>
-<h2><%= "#{@player2}:#{@player2hp}HP" %></h2>
+<h1><%= "#{@game.player1.name} vs #{@game.player2.name}" %></h1>
+<h2><%= "#{@game.player1.name}:#{@game.player1.hp}HP" %></h2>
+<h2><%= "#{@game.player2.name}:#{@game.player2.hp}HP" %></h2>
+<h3><%= "#{@game.current_turn.name}'s turn." %>
 <form action='/attack' method='POST'>
 <input type='submit' name='Attack' value='Attack'> 
 </form>
 <% if @attacked %>
-<p> You have attacked player 2 </p>
+<h2><%="#{@game.opponent.name}"%> has attacked <%="#{@game.current_turn.name}"%></h2>
+<% elsif @game_over %>
+<h2><%="#{@game.opponent.name}"%> Loses!!!</h2>
 <% end %>
